@@ -13,16 +13,18 @@ var ClickCounter = React.createClass({
             numClicks: 0
         }
     },
+    onClick : function(){
+        this.setState({
+            numClicks: this.state.numClicks+1
+        })
+    },
     render: function(){
         return (
-            <div>
+            <div onClick={this.onClick}>
             {this.state.numClicks} Clicks
             </div>
         )
     }
 })
 
-ReactDOM.render(
-    <ClickCounter></ClickCounter>,
-    document.getElementById('main')
-);
+module.exports = ClickCounter;
